@@ -1,70 +1,87 @@
 /* To top panel */
+.to_top {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+}
 
-.to_top{display: none;}
-.to_top .to_top_panel{display:none;}
+.to_top:hover {
+    opacity: 0.9;
+    transform: translateX(0);
+}
 
-/* Large desktop */
-@media (min-width: 1050px) {
-    .to_top {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width:40px;
-        -moz-opacity: 0.3;
-        filter: alpha(opacity=30);
-        opacity: 0.3;
-        display: none;
-    }
+/* Panel content */
+.to_top .to_top_panel {
+    display: none;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    color: #fff;
+    padding-top: 12px;
+    position: relative;
+    background: linear-gradient(180deg, #1a73e8, #4285f4); /* modern blue gradient */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: background 0.3s ease;
+}
 
-    .to_top .to_top_panel {
-        display: block;
-        width:100%;
-        height: 100%;
-        font-size: 11px;
-        color: #4d7285;
-        padding-top: 10px;
-        position: relative;
-    }
-    .to_top:hover {
-        -moz-opacity: 0.9;
-        filter: alpha(opacity=90);
-        opacity: 0.9;
-    }
-    .to_top:hover .to_top_panel {
-        cursor: pointer;
-        background: #f0f0f0;
-    }
-    .to_top .close_panel {
-        position: absolute;
-        bottom: 20px;
-        left: 0px;
-        right: 0px;
-        text-align: center;
-        line-height: 8px;
-        font-family: tahoma, arial, verdana, sans-serif;
-        display: none;
-    }
+.to_top:hover .to_top_panel {
+    display: block;
+    cursor: pointer;
+    background: linear-gradient(180deg, #4285f4, #1a73e8);
+}
 
-    .to_top:hover .close_panel{
-        display: block;
-    }
-    .to_top .to_top_button {
-        text-align: left;
-        line-height: 8px;
-        margin-left:10px;
-        font-family: tahoma, arial, verdana, sans-serif;
-        font-weight: bold;
-    }
-    .to_top .to_top_button .arrow{
-        font-size: 14px;
-        font-weight: bold;
-        font-family: tahoma;
-        vertical-align: middle;
-    }
+/* Close panel */
+.to_top .close_panel {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 8px;
+    font-family: tahoma, arial, verdana, sans-serif;
+    display: none;
+    color: #fff;
+}
 
+.to_top:hover .close_panel {
+    display: block;
+}
 
-    /* стиль для mini панели */
-    .to_top .to_top_panel .arrow{font-size:20px;}
-    .to_top .to_top_panel .label{display:none;}
+/* Button and arrow */
+.to_top .to_top_button {
+    text-align: center;
+    line-height: 14px;
+    font-family: tahoma, arial, verdana, sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+.to_top .to_top_button .arrow {
+    font-size: 18px;
+    font-weight: bold;
+    vertical-align: middle;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Arrow animation on hover */
+.to_top:hover .to_top_button .arrow {
+    transform: translateY(-4px);
+    color: #ffd700; /* gold accent */
+}
+
+/* Mini panel adjustments */
+.to_top .to_top_panel .arrow {
+    font-size: 24px;
+}
+
+.to_top .to_top_panel .label {
+    display: none;
 }
