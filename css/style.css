@@ -77,3 +77,19 @@
 #nav ul li a:hover {
     color: #ffcc00;        /* hover effect */
 }
+/* Global font scaling */
+html {
+    font-size: 18px; /* default 16px → bigger text */
+}
+body {
+    font-size: 1rem; /* relative to html font-size */
+    line-height: 1.6; /* better readability */
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.8rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.3rem; }
+h6 { font-size: 1.1rem; }
+p { font-size: 1rem; }
+a { font-size: 1rem; }
