@@ -62,3 +62,18 @@
 #nav ul li ul li a:hover {
   background-color: #1558b0;
 }
+/* Sticky header */
+#header-wrap {
+    position: sticky;   /* Make header stick to top */
+    top: 0;
+    z-index: 999;
+    background-color: #1a73e8; /* New modern color */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+}
+#nav ul li a {
+    color: #fff;           /* make menu text visible */
+    font-weight: bold;
+}
+#nav ul li a:hover {
+    color: #ffcc00;        /* hover effect */
+}
