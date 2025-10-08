@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-
-<html>
-
-<head lang="en">
-
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Academic Calendar | CS AIU</title>
@@ -13,6 +10,150 @@
     <link rel="stylesheet" type="text/css" href="../css/960.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
 
+    <style>
+        /* -------- General Body -------- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* -------- Header & Navigation -------- */
+        #nav ul {
+            background: #1f2937;
+            border-radius: 8px;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        #nav ul li {
+            position: relative;
+        }
+
+        #nav ul li a {
+            color: #f3f4f6;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px 20px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        #nav ul li a:hover {
+            background: #3b82f6;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        #nav ul li ul {
+            background: #111827;
+            border-radius: 5px;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 999;
+        }
+
+        #nav ul li:hover ul {
+            display: block;
+            opacity: 1;
+        }
+
+        #nav ul li ul li a {
+            font-size: 16px;
+            padding: 8px 15px;
+        }
+
+        /* -------- Content Area -------- */
+        #wrap-content {
+            padding: 30px;
+            min-height: 500px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* -------- Faculty / Cards Placeholder -------- */
+        .mosaic-block .mosaic-backdrop img {
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mosaic-block:hover .mosaic-backdrop img {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .mosaic-block .details h6 {
+            font-size: 18px;
+        }
+
+        /* -------- Buttons & Back to Top -------- */
+        a.button, .to_top_button {
+            background-color: #3b82f6;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        a.button:hover, .to_top_button:hover {
+            background-color: #2563eb;
+        }
+
+        .to_top {
+            background: #1f2937;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.7;
+            font-size: 20px;
+            z-index: 9999;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .to_top:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* -------- Footer -------- */
+        #footer-wrap {
+            background: #111827;
+            color: #f3f4f6;
+            padding: 20px 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* -------- Dark Mode -------- */
+        body.dark-mode {
+            background: #111827;
+            color: #f3f4f6;
+        }
+        body.dark-mode #nav ul { background: #1f2937; }
+        body.dark-mode #nav ul li ul { background: #1f2937; }
+        body.dark-mode a { color: #f3f4f6; }
+    </style>
 </head>
 
 <body>
@@ -21,118 +162,92 @@
 
         <!-- HEADER -->
         <div id="header-wrap">
-        <div id="header" class="container_16">
-            <div id="logo" class="grid_5">
-                <img alt="Computer Science Department" src="../images/logo.png" />
-            </div>
+            <div id="header" class="container_16">
+                <div id="logo" class="grid_5">
+                    <img alt="Computer Science Department" src="../images/logo.png" />
+                </div>
 
-            <!--Navigation-->
-            <div id="nav" class="grid_11">
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li>
-                        <a href="javascript:void(0)">Department</a>
-                        <ul id="department">
-                            <li><a href="../department/news.html">News</a></li>
-                            <li><a href="../department/developments.html">Developments</a></li>
-                            <li><a href="http://ic.iaau.edu.kg" target="_blank">Exchange Programs</a></li>
-                            <li><a href="../department/prospective-students.html">Prospective Students</a></li>
-                            <li><a href="../department/alumni.html">Alumni</a></li>
-                            <li><a href="../department/contact-us.html" >Contact Us</a></li>
-                            <li><a href="../department/info.html" >Info</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Bachelor Program</a>
-                        <ul id="program">
-                            <li><a href="../program/courses.html">Courses</a></li>
-                            <li><a href="../program/research.html">Research</a></li>
-                            <li><a href="../program/degree-guide.html">Degree Guide</a></li>
-                            <li><a href="../program/recent-diplomas.html">Recent Diplomas</a></li>
-                            <li><a href="../program/exam_rules.html">Exam Rules</a></li>
-                            <li><a href="../program/admission.html">Admission</a></li>
-                            <li><a href="../program/faq.html">FAQ</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Master Degree</a>
-                        <ul id="master">
-                            <li><a href="../grad/overview.html">Overview</a></li>
-                            <li><a href="../grad/grad-courses.html">Courses</a></li>
-                            <li><a href="../grad/grad-research.html">Graduate Research</a></li>
-                            <li><a href="../grad/grad-admission.html">Admission</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)" >Calendar</a>
-                        <ul id="calendar">
-                            <li><a href="http://iaau.edu.kg/view/public/pages/page.xhtml;jsessionid=TCIdhbOa1D1eOGAldtBq-N1i_kOX5KHgKE593l4n.sites?id=281" target="_blank">Academic Calendar</a></li>
-                            <li><a href="../calendar/schedule-of-lectures.html">Schedule of Lectures</a></li>
-                            <li><a href="../calendar/midterms.html">Midterms Schedule</a></li>
-                            <li><a href="../calendar/finals.html">Finals Schedule</a></li>
-                            <li><a href="../calendar/labs.html">Labs Schedule</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="../faculty/faculty.html">Faculty</a>
-                    </li>
-                    <li>
-                        <a href="../labs/labs.html">Labs</a>
-                        <ul id="labs">
-                            <li><a href="http://its.iaau.edu.kg/policies/lab-rules.html" target="_blank">Policy &amp;
-                                Regulations</a></li>
-                            <li><a href="../labs/software.html">Software</a></li>
-                            <li><a href="../department/contact-us.html">Contacts</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <!-- Navigation -->
+                <div id="nav" class="grid_11">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li>
+                            <a href="javascript:void(0)">Department</a>
+                            <ul id="department">
+                                <li><a href="../department/news.html">News</a></li>
+                                <li><a href="../department/developments.html">Developments</a></li>
+                                <li><a href="http://ic.iaau.edu.kg" target="_blank">Exchange Programs</a></li>
+                                <li><a href="../department/prospective-students.html">Prospective Students</a></li>
+                                <li><a href="../department/alumni.html">Alumni</a></li>
+                                <li><a href="../department/contact-us.html">Contact Us</a></li>
+                                <li><a href="../department/info.html">Info</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Bachelor Program</a>
+                            <ul id="program">
+                                <li><a href="../program/courses.html">Courses</a></li>
+                                <li><a href="../program/research.html">Research</a></li>
+                                <li><a href="../program/degree-guide.html">Degree Guide</a></li>
+                                <li><a href="../program/recent-diplomas.html">Recent Diplomas</a></li>
+                                <li><a href="../program/exam_rules.html">Exam Rules</a></li>
+                                <li><a href="../program/admission.html">Admission</a></li>
+                                <li><a href="../program/faq.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Master Degree</a>
+                            <ul id="master">
+                                <li><a href="../grad/overview.html">Overview</a></li>
+                                <li><a href="../grad/grad-courses.html">Courses</a></li>
+                                <li><a href="../grad/grad-research.html">Graduate Research</a></li>
+                                <li><a href="../grad/grad-admission.html">Admission</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Calendar</a>
+                            <ul id="calendar">
+                                <li><a href="http://iaau.edu.kg/view/public/pages/page.xhtml?id=281" target="_blank">Academic Calendar</a></li>
+                                <li><a href="../calendar/schedule-of-lectures.html">Schedule of Lectures</a></li>
+                                <li><a href="../calendar/midterms.html">Midterms Schedule</a></li>
+                                <li><a href="../calendar/finals.html">Finals Schedule</a></li>
+                                <li><a href="../calendar/labs.html">Labs Schedule</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../faculty/faculty.html">Faculty</a></li>
+                        <li>
+                            <a href="../labs/labs.html">Labs</a>
+                            <ul id="labs">
+                                <li><a href="http://its.iaau.edu.kg/policies/lab-rules.html" target="_blank">Policy & Regulations</a></li>
+                                <li><a href="../labs/software.html">Software</a></li>
+                                <li><a href="../department/contact-us.html">Contacts</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
         <!-- CONTENT -->
         <div id="wrap-content">
+            <h1>Academic Calendar</h1>
+            <p>Click the links in the menu to view schedules and academic events.</p>
         </div>
         <!-- END OF CONTENT -->
 
         <!-- FOOTER -->
         <div id="footer-wrap">
-
             <div id="footer" class="container_12">
-
                 <p class="f-left">&copy; 2015 CS Dept. AIU</p>
-
             </div>
-
         </div>
         <!-- END OF FOOTER -->
     </div>
 
-	<!-- JAVASCRIPT -->
-	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="../js/jquery.accordion.js"></script>
-	<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
-	<script type="text/javascript" src="../js/highlight.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../js/jquery.accordion.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/highlight.js"></script
 
-	<script type="text/javascript">
-		$(function() {
-
-			$('#st-accordion').accordion();
-
-		});
-	</script>
-
-	<!--Google-->
-	<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-46202546-1', 'iaau.edu.kg');
-		  ga('send', 'pageview');
-	</script>
-
-</body>
-
-</html>
+        
