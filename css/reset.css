@@ -1,106 +1,34 @@
-/* `XHTML, HTML4, HTML5 Reset
-----------------------------------------------------------------------------------------------------*/
+/* ==========================================================================
+   Modern HTML5 + CSS3 Reset
+   Simplifies defaults, improves readability, and sets a clean base.
+   ========================================================================== */
 
-a,
-abbr,
-acronym,
-address,
-applet,
-article,
-aside,
-audio,
-b,
-big,
-blockquote,
-body,
-canvas,
-caption,
-center,
-cite,
-code,
-dd,
-del,
-details,
-dfn,
-dialog,
-div,
-dl,
-dt,
-em,
-embed,
-fieldset,
-figcaption,
-figure,
-font,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-hgroup,
-hr,
-html,
-i,
-iframe,
-images,
-ins,
-kbd,
-label,
-legend,
-li,
-mark,
-menu,
-meter,
-nav,
-object,
-ol,
-output,
-p,
-pre,
-progress,
-q,
-rp,
-rt,
-ruby,
-s,
-samp,
-section,
-small,
-span,
-strike,
-strong,
-sub,
-summary,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-time,
-tr,
-tt,
-u,
-ul,
-var,
-video,
-xmp {
-  border: 0;
+/* Remove all default spacing and borders */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  font-size: 100%;
+  box-sizing: border-box;
 }
 
-html,
+/* Set base typography and smooth rendering */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
   height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222;
+  background-color: #fff;
 }
 
+/* HTML5 semantic elements */
 article,
 aside,
 details,
@@ -112,107 +40,70 @@ hgroup,
 menu,
 nav,
 section {
-/*
-  logo.png the default (display: inline) for
-  browsers that do not recognize HTML5 tags.
-
-  IE8 (and lower) requires a shiv:
-  http://ejohn.org/blog/html5-shiv
-*/
   display: block;
 }
 
-b,
-strong {
-/*
-  Makes browsers agree.
-  IE + Opera = font-weight: bold.
-  Gecko + WebKit = font-weight: bolder.
-*/
-  font-weight: bold;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111;
 }
 
 h2 {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 
-div.top {
-	margin: 1em 0 1em 0;
-	font-size: 12px;
-	text-align: right;
-}
-div #majors, #minors {
-	text-align: center;
+/* Links */
+a {
+  color: #38558d;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-#majors a, #minors a {
-	font-size: 1.3em;
+a:hover {
+  color: #f60;
 }
 
-div#given-courses {
-	font-size: 1.15em;
-}
-images {
-  color: transparent;
-  font-size: 0;
-  vertical-align: middle;
-/*
-  For IE.
-  http://css-tricks.com/ie-fix-bicubic-scaling-for-people-img
-*/
-  -ms-interpolation-mode: bicubic;
-}
-
+/* Lists */
 ol,
 ul {
   list-style: none;
 }
 
-li {
-/*
-  For IE6 + IE7:
-
-  "display: list-item" keeps bullets from
-  disappearing if hasLayout is triggered.
-*/
-  display: list-item;
-}
-
+/* Tables */
 table {
+  width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
-}
-table a {
-	text-decoration: none;
-}
-table a:hover {
-	color: #F60;
 }
 
-th,td,caption {
+th,
+td {
   font-weight: normal;
-  vertical-align: center;
+  vertical-align: middle;
   text-align: left;
+  padding: 8px 12px;
 }
 
-q {
-  quotes: none;
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+  -ms-interpolation-mode: bicubic;
 }
 
-q:before,
-q:after {
-  content: '';
-  content: none;
+/* Text emphasis */
+b,
+strong {
+  font-weight: 600;
 }
 
-sub,
-sup,
-small {
-  font-size: 75%;
-}
-
+/* Sub and sup positioning */
 sub,
 sup {
+  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
@@ -226,10 +117,39 @@ sup {
   top: -0.5em;
 }
 
+/* Basic utility sections */
+div.top {
+  margin: 1em 0;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+#majors,
+#minors {
+  text-align: center;
+}
+
+#majors a,
+#minors a {
+  font-size: 1.3em;
+}
+
+#given-courses {
+  font-size: 1.1em;
+}
+
+/* Quotes */
+q {
+  quotes: none;
+}
+
+q::before,
+q::after {
+  content: none;
+}
+
+/* SVG fix */
 svg {
-/*
-  For IE9. Without, occasionally draws shapes
-  outside the boundaries of <svg> rectangle.
-*/
+  display: block;
   overflow: hidden;
 }
