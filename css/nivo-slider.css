@@ -1,33 +1,24 @@
-/*
- * jQuery Nivo Slider v3.2
- * http://nivo.dev7studios.com
- *
- * Copyright 2012, Dev7studios
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- */
- 
-/* The Nivo Slider styles */
-
+/* Общий контейнер */
 .nivoSlider {
 	position: relative;
 	height: auto;
 	overflow: hidden;
+	border-radius: 8px;          /* скругленные углы */
+	box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* мягкая тень */
+	transition: all 0.3s ease;
 }
+
+/* Главные изображения */
 .nivoSlider img {
 	position: absolute;
-	top: 0px;
-	left: 0px;
-	max-width: none;
-}
-.nivo-main-image {
-	display: block !important;
-	position: relative !important; 
-	width: 100% !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	object-fit: cover;           /* картинки красиво масштабируются */
 }
 
-/* If an image is wrapped in a link */
-
+/* Ссылки на изображения */
 .nivoSlider a.nivo-imageLink {
 	position: absolute;
 	top: 0px;
@@ -47,47 +38,42 @@
 /* The slices and boxes in the Slider */
 .nivo-slice {
 	display: block;
-	position: absolute;
-	z-index: 5;
-	height: 100%;
-	top: 0;
+	background: transparent;
 }
 
-.nivo-box {
+/* Слайсы и боксы */
+.nivo-slice, .nivo-box {
 	display: block;
 	position: absolute;
 	z-index: 5;
 	overflow: hidden;
+	transition: all 0.5s ease;  /* плавная анимация */
 }
 
-.nivo-box img { display:block; }
-
-/* Caption styles */
+/* Капшн */
 .nivo-caption {
 	position: absolute;
-	left: 0px;
-	bottom: 0px;
-	background: #000;
+	left: 0;
+	bottom: 0;
+	background: rgba(0,0,0,0.7); /* прозрачность через rgba */
 	color: #fff;
 	width: 100%;
 	z-index: 8;
-	padding: 5px 10px;
-	opacity: 0.8;
-	overflow: hidden;
-	display: none;
-	-moz-opacity: 0.8;
-	filter:alpha(opacity=8);
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
+	padding: 10px 15px;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.95em;
+	transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 .nivo-caption p {
 	padding: 5px;
 	margin: 0;
 }
 
 .nivo-caption a {
-	display: inline !important;
+	color: #33b5e5;
+	text-decoration: underline;
 }
 
 .nivo-html-caption {
@@ -98,25 +84,34 @@
 
 .nivo-directionNav a {
 	position: absolute;
-	top: 40%;
+	top: 50%;
+	transform: translateY(-50%);
 	z-index: 9;
 	cursor: pointer;
+	background: rgba(0,0,0,0.4);
+	color: #fff;
+	padding: 8px 12px;
+	border-radius: 4px;
+	transition: background 0.3s ease;
 }
-.nivo-prevNav {
-	left: 0px;
-}
-.nivo-nextNav {
-	right: 0px;
+.nivo-directionNav a:hover {
+	background: rgba(0,0,0,0.7);
 }
 
-/* Control nav styles (e.g. 1,2,3...) */
-
+/* Контрольные точки */
 .nivo-controlNav {
 	text-align: center;
+	margin-top: 8px;
 }
 .nivo-controlNav a {
-	cursor: pointer;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: #ccc;
+	border-radius: 50%;
+	margin: 0 4px;
+	transition: background 0.3s ease;
 }
 .nivo-controlNav a.active {
-	font-weight: bold;
+	background: #33b5e5;
 }

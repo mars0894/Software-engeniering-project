@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* Modernized 960 Grid System Styles */
 
 /* Base Body */
@@ -139,81 +138,4 @@ body {
     margin-right: 0;
     margin-bottom: 10px;
   }
-=======
-/* === 960 Grid Modern Enhancements === */
-
-/* Optional visual grid background for debugging or styling */
-body {
-  background: repeating-linear-gradient(
-    to right,
-    #f9f9f9 0,
-    #f9f9f9 60px,
-    #e9e9e9 60px,
-    #e9e9e9 80px
-  );
-  background-size: 80px 100%;
-  animation: fadeInBody 1s ease-in;
-}
-
-/* Smooth fade-in for the page */
-@keyframes fadeInBody {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Add subtle transitions to all grid columns */
-[class*="grid_"] {
-  transition: all 0.3s ease-in-out;
-  border-radius: 6px;
-  background-color: rgba(90, 150, 200, 0.05);
-  animation: fadeInGrid 0.7s ease-out;
-}
-
-/* Slightly highlight each grid column when hovered */
-[class*="grid_"]:hover {
-  background-color: rgba(90, 150, 200, 0.1);
-  box-shadow: 0 0 10px rgba(60, 120, 180, 0.2);
-  transform: translateY(-2px);
-}
-
-/* Fade-in animation for grid blocks */
-@keyframes fadeInGrid {
-  0% { opacity: 0; transform: scale(0.97); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Add gentle color alternation to visualize structure */
-.container_12 .grid_1:nth-child(odd),
-.container_16 .grid_1:nth-child(odd),
-.container_12 .grid_2:nth-child(odd),
-.container_16 .grid_2:nth-child(odd),
-.container_12 .grid_3:nth-child(odd),
-.container_16 .grid_3:nth-child(odd),
-.container_12 .grid_4:nth-child(odd),
-.container_16 .grid_4:nth-child(odd) {
-  background-color: rgba(120, 180, 220, 0.08);
-}
-
-/* Smooth animation for container appearance */
-.container_12,
-.container_16 {
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-  animation: containerPop 0.8s ease-out;
-}
-
-.container_12:hover,
-.container_16:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  transform: scale(1.01);
-}
-
-@keyframes containerPop {
-  0% { opacity: 0; transform: scale(0.98); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Optional: visible grid borders for design mode */
-.show-grid [class*="grid_"] {
-  outline: 1px dashed rgba(0, 0, 0, 0.1);
->>>>>>> f06715e
 }
