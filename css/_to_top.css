@@ -1,7 +1,12 @@
 /* To top panel */
+.to_top {
+    display: none;
+}
 
-.to_top{display: none;}
-.to_top .to_top_panel{display:none;}
+/* Default hidden panel */
+.to_top .to_top_panel {
+    display: none;
+}
 
 /* Large desktop */
 @media (min-width: 1050px) {
@@ -10,61 +15,102 @@
         top: 0;
         bottom: 0;
         left: 0;
-        width:40px;
-        -moz-opacity: 0.3;
-        filter: alpha(opacity=30);
+        width: 40px;
         opacity: 0.3;
         display: none;
+        background: linear-gradient(180deg, #4d7285, #81a4b7);
+        border-right: 2px solid #5a7d91;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .to_top .to_top_panel {
         display: block;
-        width:100%;
+        width: 100%;
         height: 100%;
         font-size: 11px;
-        color: #4d7285;
+        color: #ffffff;
         padding-top: 10px;
         position: relative;
+        transition: all 0.3s ease;
     }
+
+    /* Hover effects */
     .to_top:hover {
-        -moz-opacity: 0.9;
-        filter: alpha(opacity=90);
-        opacity: 0.9;
+        opacity: 0.95;
+        background: linear-gradient(180deg, #79b4d9, #b0d2e8);
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     }
+
     .to_top:hover .to_top_panel {
         cursor: pointer;
-        background: #f0f0f0;
+        color: #2a4a5b;
+        background: rgba(255, 255, 255, 0.15);
     }
+
+    /* Close button */
     .to_top .close_panel {
         position: absolute;
         bottom: 20px;
-        left: 0px;
-        right: 0px;
+        left: 0;
+        right: 0;
         text-align: center;
         line-height: 8px;
         font-family: tahoma, arial, verdana, sans-serif;
         display: none;
+        color: #f8f8f8;
+        transition: color 0.3s ease;
     }
 
-    .to_top:hover .close_panel{
+    .to_top:hover .close_panel {
         display: block;
+        animation: fadeIn 0.6s ease-in-out;
     }
+
+    .to_top .close_panel:hover {
+        color: #ffe082;
+    }
+
+    /* Arrow and button styling */
     .to_top .to_top_button {
         text-align: left;
         line-height: 8px;
-        margin-left:10px;
+        margin-left: 10px;
         font-family: tahoma, arial, verdana, sans-serif;
         font-weight: bold;
+        color: #ffffff;
+        animation: pulse 2s infinite;
     }
-    .to_top .to_top_button .arrow{
+
+    .to_top .to_top_button .arrow {
         font-size: 14px;
         font-weight: bold;
         font-family: tahoma;
         vertical-align: middle;
+        transition: transform 0.3s ease;
     }
 
+    .to_top:hover .to_top_button .arrow {
+        transform: translateY(-3px);
+    }
 
-    /* стиль для mini панели */
-    .to_top .to_top_panel .arrow{font-size:20px;}
-    .to_top .to_top_panel .label{display:none;}
+    /* mini panel style */
+    .to_top .to_top_panel .arrow {
+        font-size: 20px;
+    }
+    .to_top .to_top_panel .label {
+        display: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+    }
 }
