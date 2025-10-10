@@ -1,95 +1,166 @@
 /* Navigation Menu */
 #nav {
-  background-color: #1a73e8; /* modern blue background */
-  padding: 10px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #1a73e8, #4285f4); /* современный градиент */
+    padding: 12px 24px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(26, 115, 232, 0.25);
+    transition: all 0.4s ease;
 }
 
+#nav:hover {
+    box-shadow: 0 8px 25px rgba(26, 115, 232, 0.35);
+}
+
+/* Menu list */
 #nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* horizontal menu */
-  gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
 }
 
+/* List items */
 #nav ul li {
-  position: relative;
+    position: relative;
 }
 
+/* Menu links */
 #nav ul li a {
-  text-decoration: none;
-  color: #fff; /* contrast for visibility */
-  font-weight: 600;
-  padding: 8px 12px;
-  display: block;
-  transition: all 0.3s ease;
-  border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    padding: 10px 16px;
+    display: block;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cool hover effect */
+#nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.4s ease;
+}
+
+#nav ul li a:hover::before {
+    left: 0;
 }
 
 #nav ul li a:hover {
-  background-color: #1558b0; /* darker on hover */
-  color: #fff;
+    color: #ffcc00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
 }
 
 /* Dropdown menu */
 #nav ul li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #1a73e8;
-  padding: 10px 0;
-  border-radius: 8px;
-  min-width: 180px;
-  z-index: 1000;
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background: linear-gradient(135deg, #1a73e8, #2f6ae0);
+    border-radius: 10px;
+    padding: 10px 0;
+    min-width: 190px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease forwards;
 }
 
 #nav ul li:hover ul {
-  display: block;
+    display: block;
 }
 
+/* Dropdown links */
 #nav ul li ul li {
-  width: 100%;
+    width: 100%;
 }
 
 #nav ul li ul li a {
-  padding: 8px 15px;
-  color: #fff;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 #nav ul li ul li a:hover {
-  background-color: #1558b0;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffcc00;
 }
+
 /* Sticky header */
 #header-wrap {
-    position: sticky;   /* Make header stick to top */
+    position: sticky;
     top: 0;
     z-index: 999;
-    background-color: #1a73e8; /* New modern color */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+    background-color: #1a73e8;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
 }
-#nav ul li a {
-    color: #fff;           /* make menu text visible */
-    font-weight: bold;
+
+#header-wrap.scrolled {
+    background-color: #1558b0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-#nav ul li a:hover {
-    color: #ffcc00;        /* hover effect */
-}
-/* Global font scaling */
+
+/* Font scaling */
 html {
-    font-size: 18px; /* default 16px → bigger text */
+    font-size: 18px;
 }
+
 body {
-    font-size: 1rem; /* relative to html font-size */
-    line-height: 1.6; /* better readability */
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f5f7fa 0%, #e9eef5 100%);
+    color: #333;
+    transition: background 0.5s ease;
 }
+
 h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 h3 { font-size: 1.8rem; }
 h4 { font-size: 1.5rem; }
 h5 { font-size: 1.3rem; }
 h6 { font-size: 1.1rem; }
-p { font-size: 1rem; }
-a { font-size: 1rem; }
+p, a { font-size: 1rem; }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+    #nav ul {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #nav ul li a {
+        text-align: center;
+        width: 100%;
+    }
+
+    #nav {
+        border-radius: 0;
+    }
+}
